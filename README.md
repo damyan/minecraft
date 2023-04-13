@@ -13,8 +13,9 @@ Build and push the multi-arch image
 docker buildx build --platform linux/amd64 --platform linux/arm64 --push . -t damyanyordanov/minecraft-java:1.19.2
 ```
 
-# Run minecraft
+# Clone repo and un minecraft
 ```bash
+git clone git@github.com:damyan/minecraft.git mc
 cd mc
 docker-compose up
 ```
