@@ -2,7 +2,7 @@ version: "3"
 
 services:
   minecraft:
-    image: damyanyordanov/minecraft-java:1.19.2
+    image: damyanyordanov/minecraft-java:1.20.1
     container_name: minecraft
     ports:
       - "25565:25565"
