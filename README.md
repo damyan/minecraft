@@ -3,7 +3,7 @@ Docker buildkit is required for multi-arch builds. Unless integrated in docker a
 ```bash
 mkdir -p ~/.docker/cli-plugins
 wget https://github.com/docker/buildx/releases/download/${version}/buildx-v{version}.linux-$arch -O ~/.docker/cli-plugins/docker-buildx
-chmod a+x ~/.docker/cli-plugins/docker-build
+chmod a+x ~/.docker/cli-plugins/docker-buildx
 docker buildx create --use
 ```
 
