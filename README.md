@@ -14,11 +14,10 @@ export VERSION=1.ab.c
 docker buildx build --platform linux/amd64 --platform linux/arm64 --push . -t damyanyordanov/minecraft-java:$VERSION -f Dockerfile-$VERSION
 ```
 
-# Clone repo and un minecraft
+# Clone repo and run minecraft
 ```bash
 git clone git@github.com:damyan/minecraft.git mc
 cd mc
 # adjust image version, if changed
 docker-compose up
 ```
-
