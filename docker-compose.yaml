@@ -2,7 +2,7 @@ version: "3"
 
 services:
   minecraft:
-    image: damyanyordanov/minecraft-java:1.20.6
+    image: damyanyordanov/minecraft-java:1.21
     container_name: minecraft
     ports:
       - "25565:25565"
@@ -15,7 +15,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.50'
+          cpus: '2'
           memory: 4096M
         reservations:
           memory: 1024M

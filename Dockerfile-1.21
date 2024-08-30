@@ -1,0 +1,19 @@
+FROM debian:testing-slim
+
+RUN apt update && apt install -y openjdk-23-jre && apt clean && rm -rf /var/lib/apt/lists/*
+
+RUN adduser --uid 5001 --disabled-password --gecos "" mc
+
+COPY --chown=mc:mc data/minecraft_server.1.21.jar /mc/minecraft_server.1.21.jar
+COPY --chown=mc:mc data/eula.txt /mc/eula.txt
+
+EXPOSE 25565/tcp
+EXPOSE 25565/udp
+
+VOLUME ["/mc"]
+
+WORKDIR /mc
+
+USER mc:mc
+
+ENTRYPOINT ["java", "-Xmx4096M", "-Xms1024M", "-jar", "minecraft_server.1.21.jar", "--nogui", "--forceUpgrade"]
