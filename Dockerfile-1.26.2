@@ -4,7 +4,7 @@ RUN apt update && apt install -y openjdk-25-jre-headless && apt clean && rm -rf 
 
 RUN useradd --uid 5001 --no-create-home mc
 
-COPY --chown=mc:mc data/minecraft_server.1.26.2.jar /mc/minecraft_server.1.26.2.jar
+COPY --chown=mc:mc data/minecraft_server.1.26.2.jar /opt/mc/minecraft_server.1.26.2.jar
 COPY --chown=mc:mc data/eula.txt /mc/eula.txt
 
 EXPOSE 25565/tcp
@@ -16,4 +16,4 @@ WORKDIR /mc
 
 USER mc:mc
 
-ENTRYPOINT ["java", "-Xmx4096M", "-Xms4096M", "-jar", "minecraft_server.1.26.2.jar", "--nogui", "--forceUpgrade"]
+ENTRYPOINT ["java", "-Xmx4096M", "-Xms4096M", "-jar", "/opt/mc/minecraft_server.1.26.2.jar", "--nogui", "--forceUpgrade"]
