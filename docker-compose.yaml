@@ -2,7 +2,7 @@ version: "3"
 
 services:
   minecraft:
-    image: damyanyordanov/minecraft-java:1.21
+    image: damyanyordanov/minecraft-java:1.26.2
     container_name: minecraft
     ports:
       - "25565:25565"
@@ -17,7 +17,7 @@ services:
         limits:
           memory: 4096M
         reservations:
-          memory: 1024M
+          memory: 4096M
     restart: unless-stopped
     volumes:
       - mc:/mc
